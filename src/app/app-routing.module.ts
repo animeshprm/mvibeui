@@ -3,26 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
     {
-        path: 'login',
-        loadChildren: 'app/login/login.module#LoginModule'
-    },
-    {
-        path: 'home',
-        loadChildren: 'app/home/home.module#HomeModule'
-    },
-    {
-        path: 'about',
-        loadChildren: 'app/about/about.module#AboutModule'
-    },
-    {
         path: '',
-        redirectTo: '',
+        redirectTo: '/login',
         pathMatch: 'full'
     }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, { enableTracing: true })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, provideRoutes, Routes, RouterOutlet, RouterLink } from '@angular/router'
+import { PathLocationStrategy } from '@angular/common';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -34,7 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeModule,
     AboutModule
   ],
-  providers: [],
+  providers: [{provide: PathLocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
